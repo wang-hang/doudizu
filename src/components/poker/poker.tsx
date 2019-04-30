@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import style from './poker.css';
 import { POKER_TYPES, POKER_VALUES } from '../../common/constants';
-import { IPoker } from '../../common/commonTypes';
+import { IPoker, IPokerWithSelected } from '../../common/commonTypes';
 import c from 'classnames';
 
-interface IProps extends IPoker{
+interface IProps extends IPoker {
   isBack: boolean;
   style?: React.CSSProperties;
-  onSelect: ({ poker, select }: { poker: IPoker, select: boolean }) => void;
+  onSelect: (pws: IPokerWithSelected) => void;
 }
 
 interface IState {
@@ -64,10 +64,10 @@ export default class Poker extends React.PureComponent<IProps, IState> {
   }
 
   private handleClick = () => {
-    const select = !this.state.selected;
+    const selected = !this.state.selected;
     const poker = { value: this.props.value, type: this.props.type };
-    this.setState({ selected: select });
+    this.setState({ selected });
 
-    this.props.onSelect({poker, select});
+    this.props.onSelect({ poker, selected });
   }
 }

@@ -38,6 +38,6 @@ export default class Screen extends React.PureComponent {
           <SelfPokers pokers={mockData} />
         </div>
       </div>
-    )
+    );
   }
 }

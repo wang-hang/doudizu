@@ -2,11 +2,14 @@ import * as React from 'react';
 // import c from 'classnames'
 
 import style from './muti-pokers.css';
-import { IPoker } from '../../common/commonTypes';
+import { IPoker, IPokerWithSelected } from '../../common/commonTypes';
 import Poker from '../poker/poker';
 
+// pws 是pokersWithSelect的缩写
+
 interface IProps {
-  pokers?: IPoker[];
+  pokersWithSelect?: IPokerWithSelected[];
+  onSelect: (pws: IPokerWithSelected) => void;
 }
 
 interface IState {
@@ -15,12 +18,16 @@ interface IState {
 
 export default class MutiPokers extends React.PureComponent<IProps, IState> {
   public static  defaultProps = {
-    pokers: [],
+    pokersWithSelect: [],
+  };
+
+  public state = {
+    selectedPokers: [] as IPoker[],
   };
 
   public render() {
     const pokerContainerStyle: React.CSSProperties = {
-      width: `${(this.props.pokers!.length - 1) * 50 + 100}px`,
+      width: `${(this.props.pokersWithSelect!.length - 1) * 50 + 100}px`,
     };
 
     return (
@@ -33,27 +40,26 @@ export default class MutiPokers extends React.PureComponent<IProps, IState> {
   }
 
   private renderPokers = (): JSX.Element[]  => {
-    return this.props.pokers!.map((p, idx) => {
-      const offsetLeft: number = idx * 80;
-
+    return this.props.pokersWithSelect!.map((pws, idx) => {
+      const offsetLeft: number = idx * 80; // 扑克向左偏移的距离
       const pokerStyle: React.CSSProperties = { left: `-${offsetLeft}px` };
+
+      if (pws.selected) {
+        pokerStyle.top = '-20px';
+      } else {
+        pokerStyle.top = '0px';
+      }
+
       return (
         <Poker
-          value={p.value}
-          type={p.type}
+          value={pws.poker.value}
+          type={pws.poker.type}
           isBack={false}
-          key={`${p.type}/${p.value}`}
+          key={`${pws.poker.type}/${pws.poker.value}`}
           style={pokerStyle}
-          onSelect={this.handleSelect}
+          onSelect={this.props.onSelect}
         />
       );
     });
-  }
-
-  private handleSelect = ({ poker, select }: { poker: IPoker, select: boolean }): void => {
-    console.log(poker);
-    this.setState({
-      selectedPokers: []
-    })
   }
 }

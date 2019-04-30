@@ -1,16 +1,27 @@
 .poker {
-  width: 125px;
-  height: 200px;
+  width: 100px;
+  min-width: 100px;
+  height: 160px;
+  min-height: 160px;
   border: 1px solid #000;
   border-radius: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  background: #fff;
 }
 .pokerValue {
   font-size: 25px;
-  height: 30px;
+  line-height: 1;
+  width: 20px;
+}
+
+.pokerLittleType {
+  width: 20px;
+  font-size: 16px;
+  line-height: 1;
+  padding: 5px 0px;
 }
 
 .pokerType {
@@ -19,13 +30,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 40px;
+  line-height: 1;
 }
 
 .lt {
+  align-self: flex-start;
   text-align: left;
 }
 
 .rb {
+  align-self: flex-end;
   text-align: right;
+}
+.rb.pokerLittleType {
+  margin-right: -5px;
 }

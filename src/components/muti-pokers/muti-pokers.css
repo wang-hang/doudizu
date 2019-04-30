@@ -1,0 +1,10 @@
+.mutiPokers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokerContainer{
+  position: relative;
+  display: flex;
+}

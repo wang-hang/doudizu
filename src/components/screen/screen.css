@@ -1,0 +1,29 @@
+.screen {
+  min-height: 500px;
+  min-width: 888px;
+  padding: 10px;
+
+}
+
+.public{
+  display: flex;
+  min-height: 500px;
+}
+
+.left {
+  width: 180px;
+  border: 1px solid #000;
+}
+
+.right {
+  width: 180px;
+  border: 1px solid #000;
+}
+.center {
+  flex: 1;
+  border: 1px solid #000;
+}
+
+.self {
+  padding-top: 10px;
+}

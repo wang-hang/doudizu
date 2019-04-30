@@ -1,6 +1,6 @@
-export enum POKER{
-  meihua = "♣",
-  fangpian = "️️️️️️♦️",
+export enum POKER_TYPES {
+  meihua = '♣',
+  fangpian = '️️️️️️♦️',
   heitao = '♠️',
   hongtao = '♥️',
 }

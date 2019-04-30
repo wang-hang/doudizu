@@ -10,7 +10,7 @@ export enum POKER_VALUES {
   JOKER_SMALL = '小王',
   JOKER_BIG = '大王',
   _3 = '3',
-  _4 = '3',
+  _4 = '4',
   _5 = '5',
   _6 = '6',
   _7 = '7',

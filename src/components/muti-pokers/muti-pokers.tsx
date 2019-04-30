@@ -9,7 +9,11 @@ interface IProps {
   pokers?: IPoker[];
 }
 
-export default class MutiPokers extends React.PureComponent<IProps> {
+interface IState {
+  selectedPokers: IPoker[];
+}
+
+export default class MutiPokers extends React.PureComponent<IProps, IState> {
   public static  defaultProps = {
     pokers: [],
   };
@@ -40,8 +44,16 @@ export default class MutiPokers extends React.PureComponent<IProps> {
           isBack={false}
           key={`${p.type}/${p.value}`}
           style={pokerStyle}
+          onSelect={this.handleSelect}
         />
       );
     });
+  }
+
+  private handleSelect = ({ poker, select }: { poker: IPoker, select: boolean }): void => {
+    console.log(poker);
+    this.setState({
+      selectedPokers: []
+    })
   }
 }

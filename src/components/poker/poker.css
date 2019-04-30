@@ -54,7 +54,7 @@
   flex: 1;
   height: 30px;
   line-height: 30px;
-  transform: scale(3);
+  font-size: 50px;
 }
 
 .jokerValue {

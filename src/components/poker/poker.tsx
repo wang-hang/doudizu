@@ -8,12 +8,21 @@ import c from 'classnames';
 interface IProps extends IPoker{
   isBack: boolean;
   style?: React.CSSProperties;
+  onSelect: ({ poker, select }: { poker: IPoker, select: boolean }) => void;
 }
 
-export default class Poker extends React.PureComponent<IProps>{
+interface IState {
+  selected: boolean;
+}
+
+export default class Poker extends React.PureComponent<IProps, IState> {
+  public state = {
+    selected: false,
+  };
+
   public render() {
     const pokerEl = ( // 正面扑克
-      <div className={style.poker} style={this.props.style} >
+      <div className={style.poker} style={this.props.style} onClick={this.handleClick}>
         <div className={style.lt}>
           <div className={c(style.pokerValue)}>{this.props.value}</div>
           <div className={c(style.pokerLittleType, style.lt)}>{this.props.type}</div>
@@ -34,7 +43,11 @@ export default class Poker extends React.PureComponent<IProps>{
     const jokerCls = isBigJoker ? style.big : style.small;
 
     const JOKER = (
-      <div className={c(style.poker, style.joker, jokerCls)} style={this.props.style}>
+      <div
+        className={c(style.poker, style.joker, jokerCls)}
+        style={this.props.style}
+        onClick={this.handleClick}
+      >
         <div className={c(style.jokerValue, style.lt)}>JOKER</div>
         <div className={style.jokerType}>王</div>
         <div className={c(style.jokerValue, style.rb)}>JOKER</div>
@@ -48,5 +61,13 @@ export default class Poker extends React.PureComponent<IProps>{
       return backPoker;
     }
     return pokerEl;
+  }
+
+  private handleClick = () => {
+    const select = !this.state.selected;
+    const poker = { value: this.props.value, type: this.props.type };
+    this.setState({ selected: select });
+
+    this.props.onSelect({poker, select});
   }
 }

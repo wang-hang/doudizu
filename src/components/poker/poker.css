@@ -1,0 +1,31 @@
+.poker {
+  width: 125px;
+  height: 200px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.pokerValue {
+  font-size: 25px;
+  height: 30px;
+}
+
+.pokerType {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.lt {
+  text-align: left;
+}
+
+.rb {
+  text-align: right;
+}

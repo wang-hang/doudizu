@@ -2,11 +2,10 @@ import * as React from 'react';
 
 import style from './poker.css';
 import { POKER_TYPES, POKER_VALUES } from '../../common/constants';
+import { IPoker } from '../../common/commonTypes';
 import c from 'classnames';
 
-interface IProps {
-  value: string;
-  type: POKER_TYPES;
+interface IProps extends IPoker{
   isBack: boolean;
   style?: React.CSSProperties;
 }
@@ -16,7 +15,7 @@ export default class Poker extends React.PureComponent<IProps>{
     const pokerEl = ( // 正面扑克
       <div className={style.poker} style={this.props.style} >
         <div className={style.lt}>
-          <div className={c(style.pokerValue, )}>{this.props.value}</div>
+          <div className={c(style.pokerValue)}>{this.props.value}</div>
           <div className={c(style.pokerLittleType, style.lt)}>{this.props.type}</div>
         </div>
         <div className={style.pokerType}>

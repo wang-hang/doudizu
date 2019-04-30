@@ -1,5 +1,5 @@
-import { POKER_TYPES } from './constants'
+import { POKER_TYPES, POKER_VALUES } from './constants'
 export interface IPoker {
-  value: string;
+  value: POKER_VALUES;
   type: POKER_TYPES;
 }

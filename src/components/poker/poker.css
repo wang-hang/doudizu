@@ -50,8 +50,11 @@
   margin-right: -5px;
 }
 
-.joker {
- 
+.jokerType {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  transform: scale(3);
 }
 
 .jokerValue {

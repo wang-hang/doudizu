@@ -8,24 +8,20 @@ import { IPoker } from '../../common/commonTypes';
 
 const mockData: IPoker[] = [
   {
-    value: '1',
+    value: POKER_VALUES._2,
     type: POKER_TYPES.fangpian,
   },
   {
-    value: '2',
+    value: POKER_VALUES._3,
     type: POKER_TYPES.fangpian,
   },
   {
-    value: '3',
+    value: POKER_VALUES._4,
     type: POKER_TYPES.fangpian,
   },
   {
     value: POKER_VALUES.JOKER_BIG,
     type: POKER_TYPES.joker,
-  },
-  {
-    value: '4',
-    type: POKER_TYPES.fangpian,
   },
 ];
 

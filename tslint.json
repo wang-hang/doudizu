@@ -13,6 +13,7 @@
     "import-name": false,
     "ter-arrow-parens": false,
     "object-literal-sort-keys": false,
-    "object-shorthand-properties-first": false
+    "object-shorthand-properties-first": false,
+    "object-literal-key-quotes": false
   }
 }

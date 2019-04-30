@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import style from './screen.css';
 import SelfPokers from '../self-pokers/self-pokers';
-import { POKER_TYPES } from '../../common/constants';
+import { POKER_TYPES, POKER_VALUES } from '../../common/constants';
 import { IPoker } from '../../common/commonTypes';
 
 const mockData: IPoker[] = [
@@ -20,11 +20,11 @@ const mockData: IPoker[] = [
     type: POKER_TYPES.fangpian,
   },
   {
-    value: '4',
-    type: POKER_TYPES.fangpian,
+    value: POKER_VALUES.JOKER_BIG,
+    type: POKER_TYPES.joker,
   },
   {
-    value: '5',
+    value: '4',
     type: POKER_TYPES.fangpian,
   },
 ];

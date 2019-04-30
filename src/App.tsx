@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as style from './App.css';
 
 import logo from './logo.svg';
-import Poker from './components/poker/poker'
-import { POKER } from './common/constants'
+// import Poker from './components/poker/poker'
+// import { POKER } from './common/constants'
 
 class App extends React.Component {
   public render() {
@@ -13,7 +13,6 @@ class App extends React.Component {
           <img src={logo} className={style.logo} alt="logo" />
           <h1 className={style.title}>You know nothing John Snow</h1>
         </header>
-        <Poker value="9" type={POKER.heitao}/>
       </div>
     );
   }

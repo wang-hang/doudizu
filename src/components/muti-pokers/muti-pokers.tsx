@@ -27,7 +27,7 @@ export default class MutiPokers extends React.PureComponent<IProps, IState> {
 
   public render() {
     const pokerContainerStyle: React.CSSProperties = {
-      width: `${(this.props.pokersWithSelect!.length - 1) * 50 + 100}px`,
+      width: `${(this.props.pokersWithSelect!.length - 1) * 50}px`,
     };
 
     return (
@@ -41,7 +41,7 @@ export default class MutiPokers extends React.PureComponent<IProps, IState> {
 
   private renderPokers = (): JSX.Element[]  => {
     return this.props.pokersWithSelect!.map((pws, idx) => {
-      const offsetLeft: number = idx * 80; // 扑克向左偏移的距离
+      const offsetLeft: number = idx * 88; // 扑克向左偏移的距离
       const pokerStyle: React.CSSProperties = { left: `-${offsetLeft}px` };
 
       if (pws.selected) {

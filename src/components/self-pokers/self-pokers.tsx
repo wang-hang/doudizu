@@ -6,7 +6,7 @@ import { IPoker, IPokerWithSelected } from '../../common/commonTypes';
 import MutiPokers from '../muti-pokers/muti-pokers';
 
 interface IProps {
-  pokers?: IPoker[];
+  pokers: IPoker[];
 }
 
 interface IState {
@@ -22,17 +22,15 @@ export default class SelfPokers extends React.PureComponent<IProps, IState> {
     pokersWithSelected: [] as IPokerWithSelected[],
   };
 
-  public componentDidMount = () => {
-    const pokersWithSelected = this.props.pokers!.map(p => {
+  public render() {
+    const pokersWithSelected = this.props.pokers.map(p => {
+      console.log(p);
       return { poker: p, selected: false };
     });
-    this.setState({ pokersWithSelected });
-  }
 
-  public render() {
     return (
       <div className={style.selfPokers}>
-        <MutiPokers pokersWithSelect={this.state.pokersWithSelected} onSelect={this.handleSelect} />
+        <MutiPokers pokersWithSelect={pokersWithSelected} onSelect={this.handleSelect} />
       </div>
     );
   }

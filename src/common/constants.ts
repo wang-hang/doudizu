@@ -1,3 +1,5 @@
+import { IPoker } from './commonTypes';
+
 export enum POKER_TYPES {
   meihua = '♣',
   fangpian = '️️️️️️♦️',
@@ -25,7 +27,7 @@ export enum POKER_VALUES {
 }
 
 export const  POKER_MAP = {
-  '3' :3,
+  '3': 3,
   '4': 4,
   '5': 5,
   '6': 6,
@@ -47,3 +49,8 @@ export enum ROLE {
   NM_1 = 'nongmin-1',
   NM_2 = 'nongmin-2',
 }
+
+export const POKER_COUNT = 54; // 扑克牌总数
+
+// 省的每次都计算
+export const COMPLETE_POKERS: IPoker[] = JSON.parse('[{"type":"♣","value":"3"},{"type":"♣","value":"4"},{"type":"♣","value":"5"},{"type":"♣","value":"6"},{"type":"♣","value":"7"},{"type":"♣","value":"8"},{"type":"♣","value":"9"},{"type":"♣","value":"10"},{"type":"♣","value":"J"},{"type":"♣","value":"Q"},{"type":"♣","value":"K"},{"type":"♣","value":"A"},{"type":"♣","value":"2"},{"type":"♠️","value":"3"},{"type":"♠️","value":"4"},{"type":"♠️","value":"5"},{"type":"♠️","value":"6"},{"type":"♠️","value":"7"},{"type":"♠️","value":"8"},{"type":"♠️","value":"9"},{"type":"♠️","value":"10"},{"type":"♠️","value":"J"},{"type":"♠️","value":"Q"},{"type":"♠️","value":"K"},{"type":"♠️","value":"A"},{"type":"♠️","value":"2"},{"type":"♥️","value":"3"},{"type":"♥️","value":"4"},{"type":"♥️","value":"5"},{"type":"♥️","value":"6"},{"type":"♥️","value":"7"},{"type":"♥️","value":"8"},{"type":"♥️","value":"9"},{"type":"♥️","value":"10"},{"type":"♥️","value":"J"},{"type":"♥️","value":"Q"},{"type":"♥️","value":"K"},{"type":"♥️","value":"A"},{"type":"♥️","value":"2"},{"type":"️️️️️️♦️","value":"3"},{"type":"️️️️️️♦️","value":"4"},{"type":"️️️️️️♦️","value":"5"},{"type":"️️️️️️♦️","value":"6"},{"type":"️️️️️️♦️","value":"7"},{"type":"️️️️️️♦️","value":"8"},{"type":"️️️️️️♦️","value":"9"},{"type":"️️️️️️♦️","value":"10"},{"type":"️️️️️️♦️","value":"J"},{"type":"️️️️️️♦️","value":"Q"},{"type":"️️️️️️♦️","value":"K"},{"type":"️️️️️️♦️","value":"A"},{"type":"️️️️️️♦️","value":"2"},{"type":"JOKER","value":"大王"},{"type":"JOKER","value":"小王"}]') // tslint:disable-line

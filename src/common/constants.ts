@@ -41,3 +41,9 @@ export const  POKER_MAP = {
   '小王': 16,
   '大王': 17,
 };
+
+export enum ROLE {
+  DZ = 'dizhu',
+  NM_1 = 'nongmin-1',
+  NM_2 = 'nongmin-2',
+}

@@ -8,3 +8,4 @@ export interface IPokerWithSelected {
   poker: IPoker;
   selected: boolean;
 }
+
